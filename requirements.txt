@@ -14,5 +14,3 @@ stripe==8.4.0
 sympy==1.12
 numpy==1.26.4
 
-langchain-core==0.1.27
-langchain==0.1.11
