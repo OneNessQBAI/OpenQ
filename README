@@ -1,0 +1,96 @@
+# AI Cybersecurity Quantum Cryptography SaaS Application
+
+## Overview
+
+This project is a SaaS platform offering **quantum-resistant cryptographic services**. Utilizing **Quantum SHA-256** and **Quantum RSA key generation** powered by Cirq (Quantum Computing), this app provides unmatched encryption security, designed to resist both classical and quantum-based attacks.
+
+The platform includes:
+- **Quantum SHA-256 Hashing**: A quantum-secure version of the traditional SHA-256 hashing algorithm.
+- **Quantum RSA Key Generation**: Using quantum randomness for generating highly secure RSA public and private key pairs.
+- **Quantum Encryption**: A secure message encryption system using quantum-generated RSA keys.
+
+This service is ideal for:
+- **Blockchain Developers**
+- **Cybersecurity Professionals**
+- **Enterprises** needing **future-proof encryption**.
+  
+Users can access these services via a **$29.99/month subscription**.
+
+## Features
+
+- **Quantum-Resistant SHA-256**: Ensures secure, irreversible hashing, leveraging quantum computing for enhanced security.
+- **Quantum RSA Key Pair Generation**: Unpredictable and highly secure key generation using quantum random numbers.
+- **Message Encryption/Decryption**: Secure communication using quantum-enhanced RSA encryption.
+- **Scalable SaaS Model**: Simple subscription model for easy access.
+
+## Installation
+
+1. Clone this repository:
+
+    ```bash
+    git clone https://github.com/your-repo/quantum-cryptography-saas.git
+    cd quantum-cryptography-saas
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Run the application:
+
+    ```bash
+    python app.py
+    ```
+
+The application will start running on `localhost:5000`.
+
+## API Endpoints
+
+- **Quantum SHA-256 Hashing**:
+  - `POST /quantum-sha256-store`
+  - `POST /quantum-sha256-verify`
+
+- **Quantum RSA Key Generation**:
+  - `POST /quantum-rsa-generate`
+
+- **Quantum RSA Encryption**:
+  - `POST /quantum-rsa-encrypt`
+  - `POST /quantum-rsa-decrypt`
+
+Refer to the [API Documentation](./docs/api.md) for detailed examples of usage.
+
+## Tech Stack
+
+- **Python**: Backend language.
+- **Flask**: Web framework for routing API requests.
+- **Cirq**: Quantum computing library used for randomness and quantum computation.
+- **SQLite**: Encrypted database for securely storing signatures and keys.
+
+## Security
+
+The app leverages **quantum randomness** and **multi-state principles** to generate unpredictable results, making it resistant to attacks by both classical and quantum computers. This provides an extra layer of security for industries looking to future-proof their encryption methods.
+
+## Pricing
+
+The platform is available under a **$29.99/month subscription**, granting access to all quantum cryptographic services.
+
+## Impact
+
+The app offers **future-proof encryption**, addressing concerns over the security of current cryptographic methods in a post-quantum world. With quantum computing advances threatening traditional encryption, this platform provides businesses with tools to secure their data against both classical and quantum attacks.
+
+### Projected Financials (Year 1 & 2)
+
+- **Year 1**:
+  - Starting with 500 users and scaling to 5,000, with total revenue projected at **$539,810**.
+- **Year 2**:
+  - Scaling to 15,000 users, with total revenue projected at **$3,196,668**.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+## Contact
+
+For inquiries, please reach out to [openquantumtech@gmail.com](mailto:openquantumtech@gmail.com).

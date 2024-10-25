@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 0;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    background-color: #0f2027;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #dee2e6;
+    box-shadow: 0 4px 8px rgba(0, 255, 234, 0.2);
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffea; /* Neon teal */
+    font-size: 3.5em;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: -10px;
+    display: inline-block;
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+}
+
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url('images/abstracyber.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    color: #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 255, 234, 0.3);
+    animation: backgroundPulse 10s infinite alternate;
+}
+
+@keyframes backgroundPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.banner-img {
+    width: 300px;
+    height: auto;
+    border-radius: 35px;
+    overflow: hidden;
+    box-shadow: 0 0 15px #00ffea;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.banner-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00ffea;
+}
+
+.main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 68px;
+    margin: 10px 0;
+    color: #00ffea;
+    text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+}
+
+.sub-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    margin: 5px 0;
+    color: #00ffea;
+}
+
+.api-key {
+    margin-top: 10px;
+}
+
+.api-input {
+    width: 20%;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #00ffea;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #00ffea;
+    box-shadow: inset 0 0 10px #00ffea;
+}
+
+.response-time {
+    margin-top: 10px;
+}
+
+.response-time-input {
+    padding: 5px;
+    width: 50px;
+    border: 1px solid #00ffea;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #00ffea;
+    box-shadow: inset 0 0 10px #00ffea;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    height: 450px;
+    overflow-y: auto;
+    border: 1px solid #00ffea;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.2);
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.user-input {
+    width: 70%;
+    height: 80px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #00ffea;
+    border-radius: 8px;
+    resize: vertical;
+    background-color: #2a2a2a;
+    color: #00ffea;
+    box-shadow: inset 0 0 10px #00ffea;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#send {
+    padding: 10px 20px;
+    background-color: #00ffea;
+    border: none;
+    color: #1e1e1e;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 255, 234, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#send:hover {
+    background-color: #00c7b7;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffea;
+}
+
+.message-display {
+    width: 80%;
+    height: 550px;
+    border: 1px solid #00ffea;
+    margin: 10px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 12px;
+    background-color: #1a1a1a;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 234, 0.2);
+}
+
+.message {
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.message pre {
+    margin: 2px 0;
+    padding: 5px;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    color: #00ffea;
+}
+
+.user-message pre {
+    background-color: #00ffea;
+    color: #1e1e1e;
+}
+
+.bot-message pre {
+    background-color: #1e90ff;
+    color: #fff;
+}
+
+.error-message pre {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.side-by-side-image {
+    width: 48%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 255, 234, 0.3);
+}
+
+.quantum-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.quantum-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #00ffea;
+    border: none;
+    color: #1e1e1e;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 255, 234, 0.3);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.quantum-buttons button:hover {
+    background-color: #00c7b7;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffea;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 255, 234, 0.3);
+    z-index: 1000;
+    width: 300px;
+    color: #00ffea;
+}
+
+.popup h2, .popup h3 {
+    text-align: center;
+    color: #00ffea;
+    margin-bottom: 20px;
+}
+
+.popup textarea, .popup input[type="text"], .popup input[type="email"], .popup input[type="password"], .popup input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #00ffea;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: #00ffea;
+    box-shadow: inset 0 0 10px #00ffea;
+}
+
+.popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00ffea;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.popup button:hover {
+    background-color: #00c7b7;
+    transform: scale(1.02);
+}
+
+.popup p {
+    text-align: center;
+    color: #00ffea;
+    cursor: pointer;
+}
+
+.popup p:hover {
+    text-decoration: underline;
+}
+
+.rsa-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rsa-subsection {
+    width: 48%;
+}
+
+.verification-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.verification-container input, .verification-container button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #00ffea;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #00ffea;
+    box-shadow: inset 0 0 10px #00ffea;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.verification-container button:hover {
+    background-color: #00c7b7;
+    transform: scale(1.02);
+}
+
+#verification-result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #00ffea;
+}
+
+.console-container {
+    width: 400px;
+    margin: 20px 0;
+    height: 175px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #000;
+    color: #00ffea;
+    font-family: monospace;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 255, 234, 0.3);
+}
+
+.console-box {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #00ffea;
+    background-color: #000;
+    color: #00ffea;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.chat-button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #00ffea;
+    border: none;
+    color: #1e1e1e;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 255, 234, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.chat-button:hover {
+    background-color: #00c7b7;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffea;
+}
+
+.instruction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.user-instruction {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    resize: vertical;
+    border: 1px solid #00ffea;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    background-color: #2a2a2a;
+    color: #00ffea;
+    box-shadow: inset 0 0 10px #00ffea;
+}
+
+#send-instruction {
+    align-self: flex-end;
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+#send-instruction:hover {
+    background-color: #218838;
+    transform: scale(1.02);
+}
+
+.clear-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.clear-btn:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.footer-content {
+    text-align: center;
+    margin: 10px 0;
+    color: #00ffea;
+    font-family: 'Orbitron', sans-serif;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #0f2027;
+    color: #00ffea;
+    margin-top: 40px;
+    box-shadow: 0 -4px 20px rgba(0, 255, 234, 0.3);
+    border-top: 3px solid #00ffea;
+}
+
+.footer-images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-image {
+    width: 22%;
+    max-width: 250px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 255, 234, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00ffea;
+}
+
+footer p {
+    font-size: 24px;
+    margin: 20px 0;
+    text-shadow: 0 0 10px #00ffea;
+}
+
+footer label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.video-container {
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.video-output {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 255, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+    .footer-image {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-image {
+        width: 90%;
+    }
+}
+
+/* Additional High-Tech Futuristic Enhancements */
+
+/* Neon Glow for Buttons */
+button, .chat-button, #send-instruction {
+    background-color: #00ffea;
+    border: none;
+    color: #1e1e1e;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #00ffea;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover, .chat-button:hover, #send-instruction:hover {
+    background-color: #00c7b7;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00ffea;
+}
+
+/* Futuristic Animations */
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 5px #00ffea; }
+    50% { box-shadow: 0 0 20px #00ffea; }
+    100% { box-shadow: 0 0 5px #00ffea; }
+}
+
+header h1 {
+    animation: neonPulse 2s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.message-display {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Enhanced Transitions for Interactive Elements */
+.banner, .banner-img, .popup, .console-container, .console-box, .chat-button, .clear-btn, .instruction-container, .user-instruction {
+    transition: all 0.3s ease;
+}
+
+/* Glowing Borders */
+.api-input, .response-time-input, .user-input, .popup textarea, .popup input {
+    border: 1px solid #00ffea;
+    box-shadow: 0 0 10px #00ffea;
+}

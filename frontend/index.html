@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Quantum AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/oq icon.png">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img src="/images/OQ LOGO.gif" alt="Banner Image" class="banner-img left">
+            <div>
+                <h1 id="open-quantum-ai" class="main-title">Open Quantum AI</h1>
+                <h2 class="sub-title">Cybersecurity - White-Hat Hacking - Automation of Security Processes - Real-time Threat Detection - Penetration Testing - Quantum & Classic Algorithms - Coding - Blockchain Transactions & Smart Contracts Security - Cryptography - Encryption & Decryption</h2>
+            </div>
+        </div>
+        <div class="auth-buttons">
+            <button id="signup-btn" onclick="showPopup('signup-popup')">Sign Up</button>
+            <button id="login-btn" onclick="showPopup('login-popup')">Login</button>
+            <button id="logout-btn" onclick="logout()" style="display: none;">Logout</button>
+            <button id="subscribe-btn" onclick="showPopup('subscribe-popup')" style="display: none;">Subscribe</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="api-key">
+            <input type="password" id="api-key" placeholder="OpenAI API Key" disabled>
+            <button id="connect" onclick="connectApiKey()" disabled>Connect</button>
+        </div>
+
+        <div class="timer-container">
+            <input type="number" id="timer-input" placeholder="Data Fetching Timer (seconds)">
+            <button id="set-timer">Set Timer</button>
+        </div>
+
+        <!-- New Buttons for Quantum SHA256 and Quantum RSA -->
+        <div class="quantum-buttons">
+            <button id="quantum-sha256-btn" onclick="showPopup('quantum-sha256-popup')">Quantum SHA256</button>
+            <button id="quantum-rsa-btn" onclick="showPopup('quantum-rsa-popup')">Quantum RSA</button>
+        </div>
+
+        <div class="chat-container">
+            <div id="message-display" class="message-display">
+                <button id="clear-conversation" class="clear-btn">X Clear Conversation</button>
+            </div>
+            <div class="input-container">
+                <textarea id="user-input" class="user-input" placeholder="Type your message here..."></textarea>
+                <button id="send">Send</button>
+            </div>
+        </div>
+
+        <!-- Instruction Container -->
+        <div class="instruction-container">
+            <textarea id="user-instruction" class="user-instruction" placeholder="Type your additional instructions here..."></textarea>
+            <button id="send-instruction">Update Instructions</button>
+        </div>
+
+        <!-- Console Output -->
+        <div class="console-container">
+            <div id="console-output" class="console-box"></div>
+        </div>
+
+        
+
+        <!-- Content and Images -->
+        <h3>Open Quantum AI v.Cybersecurity is equipped to perform various tasks in cybersecurity and white-hat hacking, such as:
+
+            Penetration Testing: It can identify and exploit vulnerabilities in networks and systems, ensuring robust security by simulating cyberattacks.
+            Decryption & Cryptography: It can handle encryption and decryption tasks, solving challenges like Bitcoin puzzles through efficient algorithms.
+            Real-time Threat Detection: By integrating with cybersecurity tools, it can detect and mitigate potential threats in real-time.
+            Automation of Security Processes: Open Quantum AI can automate repetitive security tasks like scanning, data analysis, and vulnerability assessment, improving overall efficiency.
+            Blockchain Security: It can analyze blockchain transactions, helping secure and solve cryptographic challenges.
+            Crypto Recovery
+            This makes Open Quantum AI a powerful tool for ethical hacking, system hardening, and blockchain security..</h3>
+        </h3>
+        <div class="image-container">
+            <img src="images/17.png" alt="Image 1" class="side-by-side-image">
+            <img src="images/2a-1.jpg" alt="Image 2" class="side-by-side-image">
+        </div>
+        <div class="console-info">
+            <h3>Our Projet Open Quantum AI v.Crypto- BETA</h3>
+            <p>Open Quantum AI excels at building and managing bots, multichain swaps, quantum and classical algorithms, coding, blockchain transactions, smart contracts, crypto trading, cryptography, and encryption/decryption, using a dual framework of Quantum Web3 AI and Agent-Zero with Python, Quantum Cirq, HTML, JavaScript, CSS, and multiple agents powered by GPT-4o, We utilize Cirq to implement quantum gates and intricate circuits, leveraging entanglement to facilitate simultaneous communication between agents. Currently, we are developing a hybrid Quantum Computer capable of hosting this project and more. optimized for Solana trading but adaptable to other platforms with guidance set the data fetching timer when trading so it gets a request to check the trading status, new log there error log that logs in errors so they are not repeated and it learns; if Open Quantum Ai is not responding close and open the dapp again ; BIG THANKS to developers Jerry Almonte De Leon & Frdel; IMPORTANT: YOU MUST DOWNLOAD AND RUN DOCKER TO PROTECT YOUR PC; WE DO NOT GUARANTEE ANY LOSSES OR DAMAGES RELATED TO OPEN QUANTUM AI.</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <a href="https://openquantum.blogspot.com/" target="_blank" class="chat-button">Licenses & Docs</a>
+            <a href="https://www.youtube.com/@OpenQuantum4all" target="_blank" class="chat-button">Tutorial</a>
+            <a href="https://openquantum.ca" target="_blank" class="chat-button">Open Quantum</a>
+            <a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank" class="chat-button">Docker Desktop</a>
+            <a href="https://play.google.com/store/apps/details?id=com.mtabishk.docker_mobile_app" target="_blank" class="chat-button">Docker Mobile</a>
+            <a href="https://quantumsha256.com" target="_blank" class="chat-button">Test the Quantum SHA256</a>
+            <a href="https://encryptedqmai.com" target="_blank" class="chat-button">Send An Encrypted MSG W/ EQMAI</a>
+            <a href="https://openquantumtoken.com" target="_blank" class="chat-button">Buy Open Quantum Tokens</a>
+        </div>
+
+        <!-- Video -->
+        <div class="video-container">
+            <h3>Quantum Intelligence Our AI Model Out 2025</h3>
+            <video class="video-output" controls>
+                <source src="video/qintel.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-images">
+            <img src="/images/Bitcoin Quantum AI (1).webp" alt="Image 1" class="footer-image">
+            <img src="/images/splash.webp" alt="Image 2" class="footer-image">
+            <img src="/images/emqai (2).webp" alt="Image 3" class="footer-image">
+            <img src="/images/oneness.jpg" alt="Image 4" class="footer-image">
+            <img src="/images/CRYPTOGRAPHY PRO CERTIFICATE-1.jpg" alt="Image 5" class="footer-image">
+        </div>
+        <div class="footer-content">www.OpenQuantum.ca | info@OpenQuantum.ca</div>
+        <div class="footer-content">Ottawa, ON, Canada</div>
+        <div class="footer-content">@2025 OneNess Blockchain AI</div>
+    </footer>
+
+    <!-- Pop-ups -->
+
+    <!-- Quantum SHA256 Pop-up -->
+    <div id="quantum-sha256-popup" class="popup">
+        <h2>Quantum SHA256 Signature</h2>
+        <button onclick="setSha256Mode('store')">Store Signature</button>
+        <button onclick="setSha256Mode('verify')">Verify</button>
+        <div id="sha256-store-section" style="display: none;">
+            <textarea id="sha256-input" placeholder="Enter text or upload a file"></textarea>
+            <input type="file" id="sha256-file-input">
+            <input type="text" id="sha256-tag" placeholder="Enter Tag Name">
+            <button onclick="storeSignature()">Store</button>
+        </div>
+        <div id="sha256-verify-section" style="display: none;">
+            <textarea id="sha256-input-verify" placeholder="Enter text or upload a file"></textarea>
+            <input type="file" id="sha256-file-input-verify">
+            <input type="text" id="sha256-verify-tag" placeholder="Enter Tag Name">
+            <button onclick="verifySha256Signature()">Verify</button>
+            <div id="sha256-qubits-output"></div>
+        </div>
+        <button onclick="closePopup('quantum-sha256-popup')">Close</button>
+    </div>
+
+    <!-- Quantum RSA Pop-up -->
+    <div id="quantum-rsa-popup" class="popup">
+        <h2>Quantum RSA Encryption</h2>
+        <button onclick="generateKeyPair()">Generate Key Pair</button>
+        <div id="rsa-keypair-output"></div>
+        <div class="rsa-section">
+            <div class="rsa-subsection">
+                <h3>Encrypt</h3>
+                <input type="text" id="rsa-public-key" placeholder="Public Key (e,n)">
+                <textarea id="rsa-encrypt-input" placeholder="Message to Encrypt"></textarea>
+                <button onclick="encryptMessage()">Encrypt</button>
+                <textarea id="encryption-result" readonly style="display: none;"></textarea>
+                <button onclick="copyToClipboard('encryption-result')">Copy Encrypted Message (erase the text only past numbers)</button>
+            </div>
+            <div class="rsa-subsection">
+                <h3>Decrypt</h3>
+                <input type="text" id="rsa-private-key" placeholder="Private Key (d,n)">
+                <textarea id="rsa-decrypt-input" placeholder="Message to Decrypt"></textarea>
+                <button onclick="decryptMessage()">Decrypt</button>
+                <textarea id="decryption-result" readonly style="display: none;"></textarea>
+                <button onclick="copyToClipboard('decryption-result')">Copy Decrypted Message (don't past text only numbers)</button>
+            </div>
+        </div>
+        <button onclick="closePopup('quantum-rsa-popup')">Close</button>
+    </div>
+
+    <!-- Sign Up Pop-up -->
+    <div id="signup-popup" class="popup">
+        <h2>Open Quantum AI</h2>
+        <h3>Sign Up</h3>
+        <input type="email" id="signup-email" placeholder="Email" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
+        <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+        <button onclick="signup()">Sign Up</button>
+        <button onclick="showPopup('login-popup')">Login</button>
+        <button onclick="closePopup('signup-popup')">Close</button>
+    </div>
+
+    <!-- Login Pop-up -->
+    <div id="login-popup" class="popup">
+        <h2>Open Quantum AI</h2>
+        <h3>Login</h3>
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <button onclick="showPopup('signup-popup')">Sign Up</button>
+        <p onclick="showPopup('recover-popup')">Forgot My Password</p>
+        <button onclick="closePopup('login-popup')">Close</button>
+    </div>
+
+    <!-- Recover Account Pop-up -->
+    <div id="recover-popup" class="popup">
+        <h2>Open Quantum AI</h2>
+        <h3>Recover Account</h3>
+        <input type="email" id="recover-email" placeholder="Email" required>
+        <button onclick="recoverAccount()">Send Recovery Email</button>
+    </div>
+
+    <!-- Reset Password Pop-up -->
+    <div id="reset-password-popup" class="popup">
+        <h2>Open Quantum AI</h2>
+        <h3>Reset Password</h3>
+        <input type="password" id="new-password" placeholder="New Password" required>
+        <input type="password" id="confirm-new-password" placeholder="Confirm Password" required>
+        <button onclick="resetPassword()">Reset Password</button>
+    </div>
+
+    <!-- Subscribe Pop-up -->
+    <div id="subscribe-popup" class="popup">
+        <h2>Subscribe to Open Quantum AI</h2>
+        <p>Unlock all features for $0 per month</p>
+        <button id="stripe-button">Subscribe Now</button>
+        <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+        </div>
+        <!-- Used to display form errors. -->
+        <div id="card-errors" role="alert"></div>
+        <button onclick="closePopup('subscribe-popup')">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
