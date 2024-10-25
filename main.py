@@ -413,9 +413,10 @@ def initialize():
     open_quantum_ai_instance = OpenQuantumAI(number=0, config=config)
 
 
-# Twilio credentials
-account_sid = 'AC3e40112d57aba95d84cbef2d1a9add11'
-auth_token = '675f5691c210562b8edeef8729bb47d4'
+# Twilio configuration
+# Replace these with environment variables in production
+account_sid = 'YOUR_TWILIO_ACCOUNT_SID'
+auth_token = 'YOUR_TWILIO_AUTH_TOKEN'
 client = Client(account_sid, auth_token)
 
 def quantum_random(min_value: float, max_value: float) -> float:
