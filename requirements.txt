@@ -13,6 +13,6 @@ cryptography==42.0.5
 stripe==8.4.0
 sympy==1.12
 numpy==1.26.4
-openai-1.32.0
+
 langchain-core==0.1.27
 langchain==0.1.11
